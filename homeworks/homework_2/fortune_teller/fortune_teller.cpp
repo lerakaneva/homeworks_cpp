@@ -38,8 +38,9 @@ int main() {
   cout << "Please enter another adjective:" << endl;
   cin >> adjectives[1];
 
-  cout << user_name << ", the "
-       << adjectives[user_name.size() % adjectives.size()] << " "
+  cout << "Here is your description:" << endl
+       << user_name << ", the "
+       << adjectives.at(user_name.size() % adjectives.size()) << " "
        << kTimeToNoun.at(time_of_year) << " that "
        << kEndings.at(user_name.size() % kEndings.size()) << endl;
 }
