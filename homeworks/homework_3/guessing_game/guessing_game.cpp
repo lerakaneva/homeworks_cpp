@@ -8,10 +8,10 @@ using std::endl;
 int main() {
   cout << "Welcome to the GUESSING GAME!" << endl
        << "I will generate a number and you will guess it!" << endl
-       << "Please provide the smallest number: " << endl;
+       << "Please provide the smallest number:" << endl;
   int min_number{0};
   cin >> min_number;
-  cout << "Please provide the largest number: " << endl;
+  cout << "Please provide the largest number:" << endl;
   int max_number{0};
   cin >> max_number;
 
