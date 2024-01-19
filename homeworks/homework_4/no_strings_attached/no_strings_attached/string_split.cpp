@@ -16,21 +16,19 @@ std::vector<std::string> SplitWithLimit(const std::string &str,
     }
     const size_t finish = str.find(delimiter, start);
 
-    if (finish == std::string::npos) { // delimeter not found
+    if (finish == std::string::npos) {  // delimeter not found
       result.push_back(str.substr(start, str.size() - start));
       break;
     }
 
     result.push_back(str.substr(start, finish - start));
     start = finish + delimiter.size();
-    if (limit > 0 && result.size() == limit) {
-      break;
-    }
+    if (limit > 0 && result.size() == limit) { break; }
   }
 
   return result;
 }
-} // namespace
+}  // namespace
 
 namespace no_strings_attached {
 std::vector<std::string> Split(const std::string &str,
@@ -44,9 +42,7 @@ std::vector<std::string> Split(const std::string &str,
   if (number_of_chunks_to_keep < 0) {
     throw std::out_of_range("Trying to keep negative number of elements");
   }
-  if (!number_of_chunks_to_keep) {
-    return {};
-  }
+  if (!number_of_chunks_to_keep) { return {}; }
   return SplitWithLimit(str, delimiter, number_of_chunks_to_keep);
 }
-} // namespace no_strings_attached
+}  // namespace no_strings_attached
